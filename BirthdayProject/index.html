@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+ 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- Birthday Heading -->
+     <div class="header">
+        <h2>Happy Birthday🎂💗</h2>
+    </div>
+    
+ <!-- Place countdownTimer outside the container -->
+ <div id="countdownTimer" class="countdown-timer"></div>
+    
+    <div class="container">
+
+        <input type="text" id="nameField" placeholder="Enter Name" />
+        <button id="celebrateButton">Celebrate</button>
+        <div id="animationContainer" class="hidden">
+            <div class="balloon">🎈</div>
+            <div class="popper">🎉</div>
+            <div class="emoji">😄</div>
+        </div>
+        <div id="birthdayMessage" class="hidden">
+            <h2>🎉 Happy Birthday! 🎉</h2>
+        </div>
+        <div class="cake">
+            
+            <img src="img/cake2.png" alt="Birthday Cake" class="cake-image" />
+            <div class="candles">
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+                <span class="candle">🕯️</span>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Audio elements -->
+    <audio id="backgroundMusic" loop>
+      <source src="audio/birthday.mp3"  type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="popSound">
+      <source src="audio/fireworks.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

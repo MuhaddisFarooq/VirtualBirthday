@@ -1,0 +1,1139 @@
+@keyframes changeBackground {
+    0% { background-image: url('Img/b1.jpg'); }
+    25% { background-image: url('Img/b2.jpg'); }
+    50% { background-image: url('Img/b3.jpg'); }
+    75% { background-image: url('Img/b4.jpg'); }
+    100% { background-image: url('Img/b6.jpg'); }
+}
+
+body {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    animation: changeBackground 20s infinite; /* Adjust time as needed */
+    background-size: cover; /* Ensure the background covers the entire area */
+    background-position: center;     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    color: #333; /* Text color for better readability */
+    text-align: center; /* Center-align the text */
+    font-family: 'Arial', sans-serif; /* Font style */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.container:hover {
+    transform: scale(1.03); /* Slightly enlarge the container on hover */
+}
+
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 2px solid #f08080;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: #f08080;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #fc6a6a;
+}
+
+#countdownTimer {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #555;
+}
+
+#birthdayMessage {
+    display: none;
+    font-size: 24px;
+    color: #f08080;
+    margin: 20px 0;
+}
+
+#animationContainer {
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+
+#animationContainer.show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.balloon, .popper, .emoji {
+    font-size: 60px;
+    margin: 0 10px;
+    animation: popUp 1s ease-in-out infinite alternate;
+}
+
+
+.cake {
+    display: inline-block; /* This will contain the cake base and the candles */
+    position: relative; /* Relative positioning for the cake container */
+    font-size: 6rem; /* Adjust size of the cake emoji if needed */
+    margin: 20px auto;
+}
+
+.cake-image {
+    width: 100%; /* Or the width of your choice */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; } /* Adjust the opacity to make the flicker less pronounced */
+}
+
+.candles {
+    display: flex; /* Use flexbox to position the candles */
+    position: absolute; /* Position the candles absolutely in relation to the cake base */
+    top: 8%; /* Adjust this value to position the candles on the cake base */
+    left: 10%; /* Center the candles container */
+    z-index: 1; /* Ensures candles are above the cake base */
+}
+
+.candle {
+    width: 5%; /* Width of the candle relative to the cake base */
+    height: 25%; /* Height of the candle relative to the cake base */
+    margin: 0 3%; /* Margin between candles, adjust as necessary */
+    border-radius: 5px 5px 0 0; /* Rounded top for the candles */
+    animation: flicker .9s infinite alternate;
+
+}
+
+#blowButton {
+    display: block;
+    width: auto;
+    margin: 20px auto;
+}
+
+/* Animations */
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes popUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.popping-element {
+    position: absolute;
+    font-size: 22px;
+    left: 10px; /* Adjust as needed to position on the left side */
+    color: #ffea00; /* Gold color */
+    font-weight: bold;
+    user-select: none; /* Prevent text selection */
+    animation: glitter 1s infinite alternate; /* Glittering effect */
+    z-index: 100; /* Ensure it's above other elements */
+
+}
+
+@keyframes glitter {
+    0% {
+        text-shadow: 0 0 2px #fff, 0 0 4px #ffea00;
+    }
+    100% {
+        text-shadow: 0 0 3px #fff, 0 0 5px #ffea00;
+    }
+}
+
+/* Keyframes for the glowing animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+    }
+    to {
+        text-shadow: 0 0 8px #007bff, 0 0 13px #007bff, 0 0 18px #007bff;
+    }
+}
+.header h2{
+position: absolute;
+top:0px;
+right: 590px;
+color: blue; /* Set text color to blue */
+font-size: 2.0em;
+margin: 0;
+text-shadow: 0 0 10px blue, 0 0 20px blue; /* Glowing effect */
+animation: glow 1s ease-in-out infinite alternate;
+}
+
+.countdown-timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+
+    /* Adding a subtle gradient background */
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+}
+
+.countdown-timer:hover {
+    /* Slightly scale up and brighten on hover */
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media (max-width: 399px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 5%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+    top: 10%; /* Use percentage for relative positioning */
+    left: 36%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 12vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 22vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 2vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 4vw; /* Adjust the font size relative to the width of the viewport */
+    }
+
+
+  }
+  
+  @media (min-width: 399px) and (max-width: 500px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 10%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 10%; /* Use percentage for relative positioning */
+      left: 32%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 12vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 22vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 2vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+
+  @media (min-width: 500px) and (max-width: 600px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 10%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 9vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 18vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  
+  @media (min-width: 600px) and (max-width: 720px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 13%; /* Use percentage for relative positioning */
+      left: 37%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 8vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 14vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  
+  
+  @media (min-width: 720px) and (max-width: 800px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 6%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 8vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 14vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  
+  
+  @media (min-width: 800px) and (max-width: 900px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 6%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 7vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 12vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+
+  @media (min-width: 900px) and (max-width: 1000px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 9%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 6vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 10vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  @media (min-width: 1000px) and (max-width: 1100px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 9%; /* Use percentage for relative positioning */
+      left: 34%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 6vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 10vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  @media (min-width: 1100px) and (max-width: 1200px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 11%; /* Use percentage for relative positioning */
+      left: 36%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 5vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 8vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+    
+  }
+  
+  
+  /* Large desktops and monitors */
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 10%; /* Use percentage for relative positioning */
+      left: 36%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 5vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 8vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  /* Large desktops and monitors */
+  @media (min-width: 1300px) and (max-width: 1400px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 10%; /* Use percentage for relative positioning */
+      left: 36%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 5vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 8vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  @media (min-width: 1400px) and (max-width: 1500px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 10%; /* Use percentage for relative positioning */
+      left: 36%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 4vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 7vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  @media (min-width: 1500px) and (max-width: 1700px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 5%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 4vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 7vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  @media (min-width: 1700px) and (max-width: 1900px) {
+    .header h2 {
+        top: 0;
+        right: 0; /* Align to the right */
+        font-size: 6vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 5%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 4vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 6vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  
+  @media (min-width: 1900px) and (max-width: 2100px) {
+    .header h2 {
+        top: 0;
+        right: 18%; /* Align to the right */
+        font-size: 5vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 5%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 3vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 5vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  
+  @media (min-width: 2100px){
+    .header h2 {
+        top: 0;
+        right: 18%; /* Align to the right */
+        font-size: 5vw; /* font size relative to the width of the viewport */
+        color: blue;
+        margin: 1vw; /* margin relative to the width of the viewport */
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+  
+    .container {
+      width: 90%; /* Use percentage for relative width */
+      padding: 13%; /* Use percentage for relative padding */
+    }
+  
+    .cake {
+      font-size: 10vh; /* Use viewport height for relative sizing */
+    }
+  
+    .candles {
+      top: 5%; /* Use percentage for relative positioning */
+      left: 35%; /* Center candles */
+      transform: translateX(-50%); /* Adjust for exact centering */
+    }
+  
+    .candle {
+      width: 3vw; /* Use viewport width for relative sizing */
+      height: 8vw; /* Use viewport width for relative sizing */
+      font-size: 5vw;
+    }
+  
+    .balloon, .popper, .emoji {
+      font-size: 8vw; /* Use viewport width for relative sizing */
+    }
+    .countdown-timer{
+        top: 85%;
+        right: 46%;
+        font-size: 1vw;
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"], button {
+        font-size: 2vw;
+         /* Adjust the font size relative to the width of the viewport */
+    }
+
+  
+  }
+  
+
+
+  
